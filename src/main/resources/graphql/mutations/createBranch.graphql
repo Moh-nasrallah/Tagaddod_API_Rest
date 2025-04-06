@@ -1,0 +1,22 @@
+mutation ($countryCode: String, $phoneNumber: String!, $businessClientId: ID!, $paymentType: String!, $preferredTime: String!, $longitude: String!, $latitude: String!, $addressNotes: String, $weeklyProduction: Float, $storageCapacity: Float, $price: Float, $preferredDays: [ID], $branchNumbers: [CreateBranchNumbersInput!], $signImage: String) {
+  createBranchB2bForm(
+    country_code: $countryCode
+    phone: $phoneNumber
+    business_client_id: $businessClientId
+    payment_type: $paymentType
+    preferred_time: $preferredTime
+    longitude: $longitude
+    latitude: $latitude
+    address_notes: $addressNotes
+    weekly_production: $weeklyProduction
+    storage_capacity: $storageCapacity
+    price: $price
+    days: { connect: $preferredDays }
+    branch_numbers: {
+      create: $branchNumbers
+    }
+    sign_image: $signImage
+  ) {
+    id
+  }
+}

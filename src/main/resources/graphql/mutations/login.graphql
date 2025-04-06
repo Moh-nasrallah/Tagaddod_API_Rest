@@ -1,0 +1,11 @@
+mutation login($type: AuthType!, $phone: String, $password: String!) {
+    login(type: $type, phone: $phone, password: $password) {
+        id
+        phone
+        roles {
+            id
+            name
+        }
+        jwtToken
+    }
+}

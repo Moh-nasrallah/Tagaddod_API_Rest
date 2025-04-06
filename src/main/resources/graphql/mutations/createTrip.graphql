@@ -1,0 +1,12 @@
+mutation {
+  createTripTest(
+    warehouse_type_id: 1,
+    warehouse_id: 1,
+    collector_id: 410,
+    collection_date: "2025-08-22 00:00:00",
+    requests_ids: []
+  ) {
+    id
+    status
+  }
+}

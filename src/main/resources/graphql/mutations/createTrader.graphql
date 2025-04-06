@@ -1,0 +1,30 @@
+mutation CreateTrader(
+  $name: String!, 
+  $phone: String!, 
+  $country_code: String!, 
+  $trader_type: TraderType!, 
+  $has_warehouse: Boolean!, 
+  $vehicle_id: ID!, 
+  $latitude: String!, 
+  $longitude: String!, 
+  $pickup_note: String!, 
+  $national_id_image: String!, 
+  $personal_image: String!
+) {
+  createTrader(
+    name: $name
+    phone: $phone
+    country_code: $country_code
+    trader_type: $trader_type
+    has_warehouse: $has_warehouse
+    vehicle_id: $vehicle_id
+    pickup_address: {latitude: $latitude, longitude: $longitude, note: $pickup_note}
+    national_id_image: $national_id_image
+    personal_image: $personal_image
+    verification_address: {latitude: $latitude, longitude: $longitude}
+  ) {
+    id
+    name
+    phone
+  }
+}
